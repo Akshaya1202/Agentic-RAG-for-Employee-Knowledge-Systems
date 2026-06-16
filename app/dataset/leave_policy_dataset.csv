@@ -1,0 +1,9 @@
+leave_type,description,entitlement,accrual,carry_forward,encashment,remarks
+Casual Leave,Personal or emergency needs,12 days per year,Not applicable,Not allowed,No,Short-term leave
+Sick Leave,Illness or medical needs,10 days per year,Not applicable,Not allowed,No,Medical proof may be required
+Earned Leave,Planned leave/vacation,18 days per year,Monthly accrual,Allowed up to 30 days,Yes,Can be encashed
+Maternity Leave,Childbirth (female employees),As per law,Not applicable,Not applicable,No,Statutory compliance
+Paternity Leave,Childbirth/adoption (male employees),5 days,Not applicable,Not applicable,No,As per policy
+Bereavement Leave,Death in immediate family,3 days,Not applicable,Not applicable,No,Case-based approval
+Public Holidays,Declared holidays,As per calendar,Not applicable,Not applicable,No,Company holiday list
+Comp-Off,Work on holidays/weekends,1:1 basis,On approval,Limited validity,No,Manager approval required

@@ -1,0 +1,11 @@
+id,holiday_name,holiday_date,day_of_week,holiday_type,applicable_states,description,year
+1,Republic Day,2026-01-26,Monday,National,All,Commemorates adoption of Constitution,2026
+2,Maha Shivaratri,2026-02-15,Sunday,Restricted,All,Hindu festival dedicated to Lord Shiva,2026
+3,Holi,2026-03-03,Tuesday,Restricted,All,Festival of colors,2026
+4,Good Friday,2026-04-03,Friday,National,All,Christian observance of crucifixion of Jesus,2026
+5,Labour Day,2026-05-01,Friday,National,All,International Workers' Day,2026
+6,Independence Day,2026-08-15,Saturday,National,All,India's independence from British rule,2026
+7,Ganesh Chaturthi,2026-08-27,Thursday,Regional,"Maharashtra,Karnataka,Telangana",Hindu festival celebrating Lord Ganesha,2026
+8,Gandhi Jayanti,2026-10-02,Friday,National,All,Birth anniversary of Mahatma Gandhi,2026
+9,Diwali,2026-11-08,Sunday,National,All,Festival of lights,2026
+10,Christmas,2026-12-25,Friday,National,All,Christian festival celebrating birth of Jesus,2026
