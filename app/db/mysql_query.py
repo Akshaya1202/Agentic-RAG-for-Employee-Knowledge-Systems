@@ -48,35 +48,3 @@ def query_mysql(question):
                 return rows
         except Exception:
             pass
-
-    retry_prompt = f"""
-    The previous SQL did not work or returned no rows.
-    Rewrite it as a simple, valid MySQL SELECT query using only the real schema below.
-    Only output SQL.
-
-    Schema:
-    - public_holidays(id, holiday_name, holiday_date, day_of_week, holiday_type, applicable_states, description, year)
-    - leave_policy(id, leave_type, description, entitlement, accrual, carry_forward, encashment, remarks)
-    - benefits(id, benefit_name, max_amount_inr, frequency)
-    - medical(id, benefit_category, category_limit_inr)
-    - payout_dates(id, month_name, cutoff_date, salary_payout_date)
-
-    Rules:
-    - Use public_holidays for holiday/date questions.
-    - Use leave_policy for leave entitlement/policy questions.
-    - Use LIKE when the user names a month, holiday, or leave type loosely.
-    - Use COUNT(*) when asking how many.
-    - Keep the query short and direct.
-
-    Original question: {question}
-    """
-
-    sql = llm.invoke(retry_prompt).content.strip()
-    sql = re.sub(r"^```sql\s*", "", sql, flags=re.IGNORECASE)
-    sql = re.sub(r"^```\s*", "", sql)
-    sql = re.sub(r"\s*```$", "", sql)
-    sql = sql.strip()
-
-    with engine.connect() as conn:
-        result = conn.execute(text(sql))
-        return result.fetchall()
