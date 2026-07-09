@@ -1,0 +1,37 @@
+[
+  {
+    "question": "What is the purpose of the Equal Employment Opportunity policy?",
+    "reference_answer": "To provide equal employment opportunities and prevent discrimination or harassment in the workplace.",
+    "student_answer": "The policy ensures that the company provides equal opportunity to all applicants and employees, without discrimination."
+  },
+  {
+    "question": "What does the Remote Work policy say about working hours?",
+    "reference_answer": "Employees must adhere to core working hours and be available for meetings.",
+    "student_answer": "Remote employees need to work during core business hours and stay accessible."
+  },
+  {
+    "question": "What is the procedure for booking travel under the Travel Policy?",
+    "reference_answer": "Travel must be booked through the company's approved portal or agent and requires prior manager approval.",
+    "student_answer": "You should book travel using your own personal apps without asking anyone."
+  },
+  {
+    "question": "How are workplace safety incidents reported under the Health and Safety policy?",
+    "reference_answer": "All workplace incidents and hazards must be reported immediately to the HR or safety officer.",
+    "student_answer": "Incidents should be reported to the HR or Safety Officer as soon as possible."
+  },
+  {
+    "question": "What constitutes harassment under the Code of Conduct policy?",
+    "reference_answer": "Any unwelcome conduct based on race, gender, religion, or other protected classes that creates a hostile work environment.",
+    "student_answer": "Harassment includes any unwelcome verbal or physical behavior that creates a hostile or intimidating work environment."
+  },
+  {
+    "question": "How do employees request casual leave?",
+    "reference_answer": "Casual leave must be requested in advance through the HR portal and approved by the manager.",
+    "student_answer": "Casual leaves should be requested on the company HR portal and require approval from the manager."
+  },
+  {
+    "question": "Is remote work allowed from other countries?",
+    "reference_answer": "Remote work from other countries requires special approval from HR and legal due to tax implications.",
+    "student_answer": "Yes, you can work from any country without letting anyone know."
+  }
+]
