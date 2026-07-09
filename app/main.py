@@ -34,4 +34,5 @@ def index():
 @app.post("/ask")
 def ask(payload: QueryRequest):
     result = run_query(payload.query)
-    return result
+    return {"answer": result["answer"]}
+

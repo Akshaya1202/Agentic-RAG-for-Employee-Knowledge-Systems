@@ -14,3 +14,4 @@ pypdf
 pandas
 fastapi
 uvicorn
+langchain-ollama

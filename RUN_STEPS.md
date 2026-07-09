@@ -19,7 +19,12 @@
    http://localhost:8000
    ```
 7. Type a question in the UI and click **Ask**.
-8. To stop everything later:
+8. Run the RAG evals from the project root in a terminal where Ollama is running locally:
+   ```bash
+   ollama pull ggozad/prometheus2:latest
+   docker compose exec app python run.py
+   ```
+9. To stop everything later:
    ```bash
    docker compose down
    ```

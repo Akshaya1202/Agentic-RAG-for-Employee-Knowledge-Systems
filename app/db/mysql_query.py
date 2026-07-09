@@ -40,11 +40,25 @@ def query_mysql(question):
     sql = re.sub(r"\s*```$", "", sql)
     sql = sql.strip()
 
+    # Validate SQL is read-only SELECT
+    sql_clean = re.sub(r'/\*.*?\*/', '', sql, flags=re.DOTALL)
+    sql_clean = re.sub(r'--.*$', '', sql_clean, flags=re.MULTILINE)
+    sql_clean = sql_clean.strip()
+
+    if not sql_clean.upper().startswith("SELECT"):
+        raise ValueError(f"Unsafe SQL generated: SQL query does not start with SELECT. Query: {sql}")
+
+    unsafe_keywords = ["INSERT", "UPDATE", "DELETE", "DROP", "ALTER", "CREATE", "REPLACE", "TRUNCATE"]
+    for keyword in unsafe_keywords:
+        if re.search(r'\b' + keyword + r'\b', sql_clean, re.IGNORECASE):
+            raise ValueError(f"Unsafe SQL generated: contains forbidden keyword {keyword}. Query: {sql}")
+
     with engine.connect() as conn:
         try:
             result = conn.execute(text(sql))
             rows = result.fetchall()
-            if rows:
-                return rows
-        except Exception:
-            pass
+            return sql, rows
+        except Exception as e:
+            print(f"Database error executing query '{sql}': {e}")
+            raise e
+

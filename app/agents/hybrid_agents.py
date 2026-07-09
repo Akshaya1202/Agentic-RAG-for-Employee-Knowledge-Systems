@@ -3,12 +3,17 @@ from app.ingestion.embeddings import infer_category, similarity_search
 from app.db.mysql_query import query_mysql
 from app.llm.gemini import get_model
 
+class SQLDocument:
+    def __init__(self, page_content: str):
+        self.page_content = page_content
+
 def run_query(query):
     route = route_query(query)
 
     if route == "SQL":
-        result = query_mysql(query)
-        return {"answer": str(result)}
+        sql_query, result = query_mysql(query)
+        mock_doc = SQLDocument(f"Executed SQL Query: {sql_query}\nDatabase Result: {result}")
+        return {"answer": str(result), "documents": [mock_doc]}
 
     else:
         category = infer_category(query)
@@ -28,4 +33,6 @@ def run_query(query):
         """
 
         answer = llm.invoke(prompt).content
-        return {"answer": answer}
+        return {"answer": answer, "documents": docs}
+
+
